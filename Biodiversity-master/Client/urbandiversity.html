@@ -1,0 +1,47 @@
+<!-- urbandiversity.html -->
+<!-- main template -->
+<template name="ApplicationLayout">
+   <nav>
+    <ul>
+      <li>
+        <a href="/">Home</a>
+      </li>
+    </ul>
+  </nav>
+
+  <article>
+    {{> yield}}
+  </article>
+
+  <footer>
+    <span><h3>Created by Karthik Rajgopal</h3></span>
+  </footer>
+</template>
+
+
+<!-- Specific animal list -->
+<template name = 'Animal'>
+    <div class="content">
+    <div class="wrap">
+       <div id="main" role="main">
+          <ul>
+             {{#each animal}} 
+              <li>
+                {{> specieslist }}
+              </li>
+             {{/each}}
+          </ul>
+        </div>
+    </div>
+  </div>  
+</template>
+
+<template name="Species">
+<div class="result-item">
+  <div class="{{class}}">
+      <a href="{{route}}"><img src="{{path}}" width="200" height="200" name="{{category}}-{{species}}"></a>
+  </div>
+      <p>{{species}}</p>          
+</div>            
+</template>
+
